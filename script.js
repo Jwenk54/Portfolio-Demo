@@ -11,6 +11,8 @@ function loadNav() {
   `;
 
   document.body.insertAdjacentHTML("afterbegin", navHTML);
+  document.getElementById("hireMeText").textContent = siteData.hireMeText;
+  document.getElementById("bio").textContent = siteData.bio;
 }
 
 function loadFooter() {
