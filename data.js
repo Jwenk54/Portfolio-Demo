@@ -43,8 +43,8 @@ If you want someone reliable who learns fast and communicates clearly, let’s t
     {
       name: "Breakout Tracker",
       description: "A tool that allows users to track stock prices manually.",
-      live: "https://jwenk54.github.io/Breakout-Tracker/",
-      github: "https://github.com/JWenk54/Breakout-Tracker",
+      live: "https://jwenk54.github.io/Breakout/",
+      github: "https://github.com/JWenk54/Breakout",
       image: "breakout-screen.jpeg"
     }
   ]
