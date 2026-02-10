@@ -1,5 +1,5 @@
 function loadNav() {
-  const navHTML = 
+  const navHTML = `
     <header>
       <nav>
         <a href="index.html">Home</a>
@@ -8,17 +8,17 @@ function loadNav() {
         <a href="contact.html">Contact</a>
       </nav>
     </header>
-  ;
+  `;
 
   document.body.insertAdjacentHTML("afterbegin", navHTML);
 }
 
 function loadFooter() {
-  const footerHTML = 
+  const footerHTML = `
     <div class="footer">
       <p>© ${new Date().getFullYear()} ${siteData.name}. Built with HTML/CSS/JS.</p>
     </div>
-  ;
+  `;
 
   document.body.insertAdjacentHTML("beforeend", footerHTML);
 }
@@ -65,12 +65,17 @@ function loadProjects() {
 
   siteData.projects.forEach(project => {
     const div = document.createElement("div");
-    div.className = "card";
+    div.className = "project-card";
 
     div.innerHTML = `
+      <img src="${project.image}" alt="${project.name} screenshot" class="project-image">
       <h2>${project.name}</h2>
       <p>${project.description}</p>
-      <a class="btn" href="${project.link}" target="_blank">View Project</a>
+
+      <div class="project-buttons">
+        <a class="btn" href="${project.live}" target="_blank">Live Demo</a>
+        <a class="btn btn-outline" href="${project.github}" target="_blank">GitHub</a>
+      </div>
     `;
 
     projectsContainer.appendChild(div);

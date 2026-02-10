@@ -14,29 +14,38 @@ If you want someone reliable who learns fast and communicates clearly, let’s t
 
   projects: [
     {
-      name: "Click Counter App",
-      description: "A simple app that counts clicks and disables the button at a limit.",
-      link: "https://jwenk54.github.io/Boom/"
-    },
-    {
-      name: "Whack-A-Mole Game",
+      name: "Original Whack Game",
       description: "A fun JavaScript game with score tracking and a high score system.",
-      link: "https://jwenk54.github.io/Whack-A-Box/"
-    },
-    {
-      name: "Estimate Builder Tool",
-      description: "A tool that saves and loads estimates using localStorage.",
-      link: "https://jwenk54.github.io/Estimate-Calculator/"
+      live: "https://jwenk54.github.io/Whack-A-Box/",
+      github: "https://github.com/JWenk54/Whack-A-Box",
+      image: "whack-screen.jpeg"
     },
     {
         name: "Quick Bid Tool",
         description: "A tool that allows users to quickly create and manage bids for projects.",
-        link: "https://jwenk54.github.io/Quick-Bid-Estimate/"
+        live: "https://jwenk54.github.io/Quick-Bid-Estimate/",
+        github: "https://github.com/JWenk54/Quick-Bid-Estimate",
+        image: "quick-bid-screen.jpeg"
     },
     {
         name: "Boom goes the dynamite game",
         description: "A nonsense game where players try to out click the bomb.",
-        link: "https://jwenk54.github.io/Whack-A-Box/"
+        live: "https://jwenk54.github.io/Boom/",
+        github: "https://github.com/JWenk54/Boom",
+        image: "boom-screen.jpeg"
+    },
+      {name: "Ice Breaker Game",
+      description: "A fun game where players try to break the ice blocks by clicking on them.",
+      live: "https://jwenk54.github.io/IceBreaker/",
+      github: "https://github.com/JWenk54/IceBreaker",
+      image: "icebreaker-screen.jpeg"
+    },
+    {
+      name: "Breakout Tracker",
+      description: "A tool that allows users to track stock prices manually.",
+      live: "https://jwenk54.github.io/Breakout-Tracker/",
+      github: "https://github.com/JWenk54/Breakout-Tracker",
+      image: "breakout-screen.jpeg"
     }
   ]
 };
