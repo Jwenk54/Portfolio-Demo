@@ -38,6 +38,9 @@ function loadCommonData() {
   const emailLink = document.getElementById("emailLink");
   if (emailLink) emailLink.href = `mailto:${siteData.email}`;
 
+  const emailText = document.getElementById("emailText");
+  if (emailText) emailText.textContent = siteData.email;
+
   const githubLink = document.getElementById("githubLink");
   if (githubLink) githubLink.href = siteData.github;
 

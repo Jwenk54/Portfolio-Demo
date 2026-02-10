@@ -46,6 +46,13 @@ If you want someone reliable who learns fast and communicates clearly, let’s t
       live: "https://jwenk54.github.io/Breakout/",
       github: "https://github.com/JWenk54/Breakout",
       image: "breakout-screen.jpeg"
+    },
+    {
+      name: "Portfolio Demo",
+      description: "A simple portfolio website built with JavaScript.",
+      live: "https://jwenk54.github.io/Portfolio-Demo/",
+      github: "https://github.com/JWenk54/Portfolio-Demo",
+      image: "portfolio-screen.jpeg"
     }
   ]
 };
