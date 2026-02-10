@@ -11,8 +11,6 @@ function loadNav() {
   `;
 
   document.body.insertAdjacentHTML("afterbegin", navHTML);
-  document.getElementById("hireMeText").textContent = siteData.hireMeText;
-  document.getElementById("bio").textContent = siteData.bio;
 }
 
 function loadFooter() {
@@ -35,6 +33,7 @@ function loadCommonData() {
   setText("title", siteData.title);
   setText("location", siteData.location);
   setText("bio", siteData.bio);
+  setText("hireMeText", siteData.hireMeText);
 
   const emailLink = document.getElementById("emailLink");
   if (emailLink) emailLink.href = `mailto:${siteData.email}`;
