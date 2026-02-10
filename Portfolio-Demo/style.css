@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+  background: #0f172a;
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+
+header {
+  background: #111827;
+  padding: 20px;
+  border-bottom: 2px solid #1f2937;
+}
+
+nav {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+nav a:hover {
+  background: #1f2937;
+}
+
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+h2 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.card {
+  background: #111827;
+  border: 1px solid #1f2937;
+  padding: 18px;
+  border-radius: 16px;
+  margin-top: 15px;
+}
+
+button, .btn {
+  display: inline-block;
+  margin-top: 12px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+button:hover, .btn:hover {
+  opacity: 0.85;
+}
+
+.footer {
+  text-align: center;
+  padding: 25px;
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
