@@ -14,11 +14,11 @@ If you want someone reliable who learns fast and communicates clearly, let’s t
 
   projects: [
     {
-      name: "Original Whack Game",
-      description: "A fun JavaScript game with score tracking and a high score system.",
-      live: "https://jwenk54.github.io/Whack-A-Box/",
-      github: "https://github.com/JWenk54/Whack-A-Box",
-      image: "whack-screen.jpeg"
+      name: "Breakout Tracker",
+      description: "A tool that allows users to track stock prices manually.",
+      live: "https://jwenk54.github.io/Breakout/",
+      github: "https://github.com/JWenk54/Breakout",
+      image: "breakout-screen.jpeg"
     },
     {
         name: "Quick Bid Tool",
@@ -28,24 +28,25 @@ If you want someone reliable who learns fast and communicates clearly, let’s t
         image: "quick-bid-screen.jpeg"
     },
     {
-        name: "Boom goes the dynamite game",
-        description: "A nonsense game where players try to out click the bomb.",
-        live: "https://jwenk54.github.io/Boom/",
-        github: "https://github.com/JWenk54/Boom",
-        image: "boom-screen.jpeg"
-    },
-      {name: "Ice Breaker Game",
+      name: "Ice Breaker Game",
       description: "A fun game where players try to break the ice blocks by clicking on them.",
       live: "https://jwenk54.github.io/IceBreaker/",
       github: "https://github.com/JWenk54/IceBreaker",
       image: "icebreaker-screen.jpeg"
     },
     {
-      name: "Breakout Tracker",
-      description: "A tool that allows users to track stock prices manually.",
-      live: "https://jwenk54.github.io/Breakout/",
-      github: "https://github.com/JWenk54/Breakout",
-      image: "breakout-screen.jpeg"
+        name: "Boom goes the dynamite game",
+        description: "A nonsense game where players try to out click the bomb.",
+        live: "https://jwenk54.github.io/Boom/",
+        github: "https://github.com/JWenk54/Boom",
+        image: "boom-screen.jpeg"
+    },
+    {
+      name: "Original Whack Game",
+      description: "A fun JavaScript game with score tracking and a high score system.",
+      live: "https://jwenk54.github.io/Whack-A-Box/",
+      github: "https://github.com/JWenk54/Whack-A-Box",
+      image: "whack-screen.jpeg"
     },
     {
       name: "Portfolio Demo",
