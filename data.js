@@ -20,6 +20,20 @@ If you want someone reliable who learns fast and communicates clearly, let’s t
       github: "https://github.com/JWenk54/Breakout",
       image: "breakout-screen.jpeg"
     },
+    {        
+        name: "Company Website-JwWorks",
+        description: "A website for a contractor company.",
+        live: "https://jwenk54.github.io/jw-works/",
+        github: "https://github.com/JWenk54/jw-works",
+        image: "jw-works-screen.jpeg"
+    },
+    {
+        name: "Note Taking with AI Assistance",
+        description: "A widget to take notes with AI assistance.",
+        live: "https://jwenk54.github.io/notes/",
+        github: "https://github.com/JWenk54/notes",
+        image: "note-screen.jpeg"
+    },
     {
         name: "Quick Bid Tool",
         description: "A tool that allows users to quickly create and manage bids for projects.",
@@ -32,12 +46,6 @@ If you want someone reliable who learns fast and communicates clearly, let’s t
         live: "https://jwenk54.github.io/Ice-Breaker/",
         github: "https://github.com/JWenk54/Ice-Breaker",
         image: "ice-breaker-screen.jpeg"
-    },
-    {        name: "Note Taking with AI Assistance",
-        description: "A widget to take notes with AI assistance.",
-        live: "https://jwenk54.github.io/notes/",
-        github: "https://github.com/JWenk54/notes",
-        image: "note-screen.jpeg"
     },
     {
       name: "Ice Breaker Game",

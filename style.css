@@ -94,7 +94,10 @@ button:hover, .btn:hover {
     border: 1px solid #1f2937; 
     border-radius: 16px; padding: 16px; 
     overflow: hidden; 
-    transition: transform 0.2s ease; } 
+    transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+  } 
     .project-card:hover { 
       transform: translateY(-6px); } 
 /* PROJECT IMAGE */ 
@@ -108,8 +111,17 @@ button:hover, .btn:hover {
 .project-buttons 
 { display: flex; 
   gap: 10px; 
-  flex-wrap: wrap; } 
+  flex-wrap: wrap;
+  margin-top: auto; } 
   .project-buttons a { 
     flex: 1; 
-    text-align: center; 
-}
+    text-align: center;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 !important;
+    margin: 0 !important;
+    line-height: 1 !important;
+    min-height: 44px;
+  }
