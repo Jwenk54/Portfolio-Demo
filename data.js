@@ -33,6 +33,12 @@ If you want someone reliable who learns fast and communicates clearly, let’s t
         github: "https://github.com/JWenk54/Ice-Breaker",
         image: "ice-breaker-screen.jpeg"
     },
+    {        name: "Note Taking with AI Assistance",
+        description: "A widget to take notes with AI assistance.",
+        live: "https://jwenk54.github.io/notes/",
+        github: "https://github.com/JWenk54/notes",
+        image: "note-screen.jpeg"
+    },
     {
       name: "Ice Breaker Game",
       description: "A fun game where players try to break the ice blocks by clicking on them.",
