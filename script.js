@@ -4,6 +4,7 @@ function loadNav() {
       <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
+        <a href="analysis.html">Analysis</a>
         <a href="projects.html">Projects</a>
         <a href="resume.html">Resume</a>
         <a href="contact.html">Contact</a>

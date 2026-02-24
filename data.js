@@ -1,16 +1,16 @@
 const siteData = {
   name: "Joel Wenk",
-  title: "Junior Developer",
+  title: "Data Analyst, Business Professional, Junior Developer",
   location: "Middleville, Michigan, USA",
   email: "j.wenk54@gmail.com",
   github: "https://github.com/JWenk54",
 
-  bio: "I’m a developer who loves building clean, fast websites and learning new skills every day.",
+  bio: "I am a results-driven professional with a passion for building clean, efficient, and high-performance spreadsheets, analytical systems, and websites. I take pride in creating streamlined solutions that turn data into actionable insights. Committed to continuous growth, I actively pursue new skills and knowledge every day to stay ahead in an evolving digital landscape.",
 
-  hireMeText: `I’m available for junior developer work, small business websites, and custom tools.
-If you want someone reliable who learns fast and communicates clearly, let’s talk.`,
+  hireMeText: `I am available to work in Data analysis, Junior Development, or Business Administration.
+I work professionally, I learn and adapt to change efficiently, and communicate clearly.`,
 
-  skills: ["HTML", "CSS", "JavaScript", "Git", "Responsive Design"],
+  skills: ["Excel, Data Analysis, Word, SQL, HTML, CSS, JavaScript, Github, Responsive Design"],
 
   projects: [
     {

@@ -14,28 +14,46 @@
       <div class="card">
         <h1>Highlights</h1>
         <ul>
+          <li>Profiecient in Excel, Word, Powerpoint</li>
           <li>Built web apps using HTML, CSS, and JavaScript</li>
           <li>Background in programming and troubleshooting Motoman and Sepro Robots</li>
-          <li>Comfortable with GitHub, VS Code, and debugging</li>
+          <li>Comfortable with SQL, Python, Java, GitHub, VS Code</li>
           <li>Strong communication and problem-solving skills</li>
         </ul>
       </div>
 
-      <div class="card">
-        <h2>
-          <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer">
-            Download Resume (PDF)
-          </a>
-        </h2>
+      <div class="resume-grid">
+        <!-- Cover Letter Section -->
+        <div class="card">
+          <h2>Cover Letter</h2>
+          <div class="pdf-buttons" style="margin-top: 12px;">
+            <button onclick="toggleCoverLetterPDF()" class="btn-view" id="coverLetterViewBtn">View Cover Letter</button>
+            <a href="assets/Joel-Wenk-Cover.pdf" download="Joel-Wenk-Cover.pdf" class="btn-download">Download</a>
+            <a href="assets/Joel-Wenk-Cover.pdf" target="_blank" class="btn" style="background: #7c3aed;">Open in Tab</a>
+          </div>
+          <div class="pdf-viewer" id="coverLetterPDFViewer" style="display: none; margin-top: 16px;">
+            <iframe src="assets/Joel-Wenk-Cover.pdf" width="100%" height="600px" style="border: none; border-radius: 8px;"></iframe>
+          </div>
+        </div>
+
+        <!-- Resume Section -->
+        <div class="card">
+          <h2>Resume</h2>
+          <div class="pdf-buttons" style="margin-top: 12px;">
+            <button onclick="toggleResumePDF()" class="btn-view" id="resumeViewBtn">View Resume</button>
+            <a href="assets/NEW Joel Wenk Resume NEW.pdf" download="NEW Joel Wenk Resume NEW.pdf" class="btn-download">Download</a>
+            <a href="assets/NEW Joel Wenk Resume NEW.pdf" target="_blank" class="btn" style="background: #7c3aed;">Open in Tab</a>
+          </div>
+          <div class="pdf-viewer" id="resumePDFViewer" style="display: none; margin-top: 16px;">
+            <iframe src="assets/NEW Joel Wenk Resume NEW.pdf" width="100%" height="600px" style="border: none; border-radius: 8px;"></iframe>
+          </div>
+        </div>
       </div>
 
       <div class="card">
         <h3>Skills</h3>
         <ul>
-          <li>HTML / CSS / JavaScript</li>
-          <li>Responsive design</li>
-          <li>APIs + working with data</li>
-          <li>Supabase (basic)</li>
+          <li>Excel, Data Analysis, Word, SQL, HTML, CSS, JavaScript, Git, Responsive Design</li>
         </ul>
       </div>
 
@@ -46,5 +64,34 @@
     <script src="data.js"></script>
     <script src="script.js"></script>
 
+    <script>
+      // Toggle Cover Letter PDF viewer
+      function toggleCoverLetterPDF() {
+        const viewer = document.getElementById("coverLetterPDFViewer");
+        const btn = document.getElementById("coverLetterViewBtn");
+        
+        if (viewer.style.display === "none") {
+          viewer.style.display = "block";
+          btn.textContent = "Hide Cover Letter";
+        } else {
+          viewer.style.display = "none";
+          btn.textContent = "View Cover Letter";
+        }
+      }
+
+      // Toggle Resume PDF viewer
+      function toggleResumePDF() {
+        const viewer = document.getElementById("resumePDFViewer");
+        const btn = document.getElementById("resumeViewBtn");
+        
+        if (viewer.style.display === "none") {
+          viewer.style.display = "block";
+          btn.textContent = "Hide Resume";
+        } else {
+          viewer.style.display = "none";
+          btn.textContent = "View Resume";
+        }
+      }
+    </script>
   </body>
 </html>

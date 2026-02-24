@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analysis | Joel Wenk</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💪</text></svg>" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main class="container">
+    <h1>Data Analysis Showcase</h1>
+    
+    <div class="card">
+      <h2>Featured Analysis</h2>
+      <p>Multi-asset market analysis project:</p>
+      
+      <!-- Featured Analysis Project -->
+      <div class="pdf-container">
+        <div class="pdf-header">
+          <div class="upload-info">
+            <span class="file-icon">📊</span>
+            <span class="upload-link">Multi-asset market analysis</span>
+          </div>
+          <div class="pdf-buttons">
+            <button onclick="toggleAnalysisPDF()" class="btn-view" id="analysisViewBtn">View Analysis</button>
+            <a href="assets/Multi-asset market analysis.pdf" target="_blank" class="btn" style="background: #7c3aed;">Open in Tab</a>
+          </div>
+        </div>
+        <div class="pdf-viewer" id="analysisPDFViewer" style="display: none;">
+          <iframe src="assets/Multi-asset market analysis.pdf" width="100%" height="600px" style="border: none; border-radius: 8px;"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Charts & Visualizations</h2>
+      <p>Stock analysis charts and technical patterns:</p>
+      <div id="chartGallery" class="chart-gallery"></div>
+      <div style="margin-top: 20px;">
+        <h3>Upload Additional Charts</h3>
+        <p>Add more charts, graphs, and visual representations of your analysis.</p>
+        <input type="file" id="chartUpload" accept="image/*" multiple class="file-input" />
+        <button onclick="uploadChart()" class="btn btn-upload">Add Chart</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Upload PDF Reports</h2>
+      <p>Upload your analysis reports in PDF format to showcase your work.</p>
+      <input type="file" id="pdfUpload" accept=".pdf" multiple class="file-input" />
+      <button onclick="uploadPDF()" class="btn btn-upload">Add PDF</button>
+      <div id="pdfList" class="uploads-list"></div>
+    </div>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+  <script>
+    // Store uploaded files in localStorage
+    let uploadedPDFs = JSON.parse(localStorage.getItem('analysis_pdfs')) || [];
+    let uploadedCharts = JSON.parse(localStorage.getItem('analysis_charts')) || [];
+
+    // Display stored PDFs on page load
+    function displayPDFs() {
+      const pdfList = document.getElementById('pdfList');
+      pdfList.innerHTML = '';
+      
+      uploadedPDFs.forEach((pdf, index) => {
+        const pdfItem = document.createElement('div');
+        pdfItem.className = 'pdf-container';
+        pdfItem.innerHTML = `
+          <div class="pdf-header">
+            <div class="upload-info">
+              <span class="file-icon">📄</span>
+              <span class="upload-link">${pdf.name}</span>
+            </div>
+            <div class="pdf-buttons">
+              <button onclick="togglePDF(${index})" class="btn-view" id="viewBtn${index}">View PDF</button>
+              <a href="${pdf.url}" download="${pdf.name}" class="btn-download">Download</a>
+              <button onclick="removePDF(${index})" class="btn-remove">Remove</button>
+            </div>
+          </div>
+          <div class="pdf-viewer" id="pdfViewer${index}" style="display: none;">
+            <iframe src="${pdf.url}" width="100%" height="600px" style="border: none; border-radius: 8px;"></iframe>
+          </div>
+        `;
+        pdfList.appendChild(pdfItem);
+      });
+    }
+
+    // Toggle PDF viewer visibility
+    function togglePDF(index) {
+      const viewer = document.getElementById(`pdfViewer${index}`);
+      const btn = document.getElementById(`viewBtn${index}`);
+      
+      if (viewer.style.display === 'none') {
+        viewer.style.display = 'block';
+        btn.textContent = 'Hide PDF';
+      } else {
+        viewer.style.display = 'none';
+        btn.textContent = 'View PDF';
+      }
+    }
+
+    // Display stored charts on page load
+    function displayCharts() {
+      const chartGallery = document.getElementById('chartGallery');
+      
+      // Remove only uploaded charts (those with remove buttons), keep defaults
+      const uploadedChartItems = chartGallery.querySelectorAll('.chart-item:has(.btn-remove)');
+      uploadedChartItems.forEach(item => item.remove());
+      
+      uploadedCharts.forEach((chart, index) => {
+        const chartItem = document.createElement('div');
+        chartItem.className = 'chart-item';
+        chartItem.innerHTML = `
+          <img src="${chart.url}" alt="${chart.name}" class="chart-image" />
+          <div class="chart-caption">
+            <p>${chart.name}</p>
+            <button onclick="removeChart(${index})" class="btn-remove">Remove</button>
+          </div>
+        `;
+        chartGallery.appendChild(chartItem);
+      });
+    }
+
+    // Upload PDF
+    function uploadPDF() {
+      const fileInput = document.getElementById('pdfUpload');
+      const files = fileInput.files;
+      
+      if (files.length === 0) {
+        alert('Please select at least one PDF file.');
+        return;
+      }
+
+      Array.from(files).forEach(file => {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          uploadedPDFs.push({
+            name: file.name,
+            url: e.target.result
+          });
+          localStorage.setItem('analysis_pdfs', JSON.stringify(uploadedPDFs));
+          displayPDFs();
+        };
+        reader.readAsDataURL(file);
+      });
+
+      fileInput.value = '';
+    }
+
+    // Upload Chart
+    function uploadChart() {
+      const fileInput = document.getElementById('chartUpload');
+      const files = fileInput.files;
+      
+      if (files.length === 0) {
+        alert('Please select at least one image file.');
+        return;
+      }
+
+      Array.from(files).forEach(file => {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          uploadedCharts.push({
+            name: file.name,
+            url: e.target.result
+          });
+          localStorage.setItem('analysis_charts', JSON.stringify(uploadedCharts));
+          displayCharts();
+        };
+        reader.readAsDataURL(file);
+      });
+
+      fileInput.value = '';
+    }
+
+    // Remove PDF
+    function removePDF(index) {
+      uploadedPDFs.splice(index, 1);
+      localStorage.setItem('analysis_pdfs', JSON.stringify(uploadedPDFs));
+      displayPDFs();
+    }
+
+    // Remove Chart
+    function removeChart(index) {
+      uploadedCharts.splice(index, 1);
+      localStorage.setItem('analysis_charts', JSON.stringify(uploadedCharts));
+      displayCharts();
+    }
+
+    // Toggle Analysis PDF viewer
+    function toggleAnalysisPDF() {
+      const viewer = document.getElementById('analysisPDFViewer');
+      const btn = document.getElementById('analysisViewBtn');
+      
+      if (viewer.style.display === 'none') {
+        viewer.style.display = 'block';
+        btn.textContent = 'Hide Analysis';
+      } else {
+        viewer.style.display = 'none';
+        btn.textContent = 'View Analysis';
+      }
+    }
+
+    // Load pre-defined charts on page load
+    function loadDefaultCharts() {
+      const defaultCharts = [
+        { name: 'INTC Neutral Triangle', url: 'assets/INTC_Neutral_Triangle.png' },
+        { name: 'IREN Overall Sample', url: 'assets/IREN_Overall_Sample.png' },
+        { name: 'ONDS Bullish Flag Breakout', url: 'assets/ONDS_Bullish_Flag_Breakout.png' },
+        { name: 'SNDK Neutral Compressed', url: 'assets/SNDK_Neutral_Compressed.png' }
+      ];
+
+      const chartGallery = document.getElementById('chartGallery');
+      defaultCharts.forEach((chart, index) => {
+        const chartItem = document.createElement('div');
+        chartItem.className = 'chart-item';
+        chartItem.innerHTML = `
+          <img src="${chart.url}" alt="${chart.name}" class="chart-image" />
+          <div class="chart-caption">
+            <p>${chart.name}</p>
+          </div>
+        `;
+        chartGallery.appendChild(chartItem);
+      });
+    }
+
+    // Display uploads on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      loadDefaultCharts();
+      displayPDFs();
+      displayCharts();
+    });
+  </script>
+
+</body>
+</html>
